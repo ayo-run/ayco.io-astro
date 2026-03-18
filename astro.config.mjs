@@ -14,6 +14,7 @@ export default defineConfig({
     domains: ['cdn.bsky.app', 'media.ayco.io'],
     remotePatterns: [{ protocol: 'https' }],
   },
+  security: { csp: true },
   integrations: [
     sitemap(),
     serviceWorker({
