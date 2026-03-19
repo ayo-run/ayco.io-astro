@@ -47,7 +47,7 @@ export const footerLinks: Link[] = [
   },
   {
     text: 'GitHub',
-    url: 'https://github.com/ayo-run',
+    url: 'https://ayco.io/gh',
     icon: 'github',
   },
   {
