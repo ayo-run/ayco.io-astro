@@ -1,0 +1,70 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import Footer from '../../../../components/Footer.astro'
+
+const title = `BACK AT IT`
+const description = ``
+let publishedOn = `the 22nd day of February 2026`
+const publishDate = `2026-02-22`
+const publishState = ``
+const content = `<p>Hello! Been a while!</p>
+<p>Yes, I'm getting back to some of my shelved side projects like McFly and Astro SW.</p>
+<p>Why were they shelved, you ask?</p>
+<p>Well, that's a story for another time.</p>
+<p>You can Follow me on GitHub to see my activities on these projects if that's your thing. :)</p>`
+
+publishedOn = publishedOn === '' ? publishDate : publishedOn
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <h1><span class="text-gradient">{title}</span></h1>
+    <p>
+      <small>
+        Published on
+        <time datetime={publishDate}>
+          {publishedOn}
+        </time>
+        {publishState}
+      </small>
+    </p>
+
+    <Fragment set:html={content} />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--ayo-gradient);
+    animation: pulse 4s ease-in-out infinite;
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+  }
+
+  .highlighted-content {
+    margin: 1rem 0;
+    background: #4f39fa;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
+
+  .highlighted-content code {
+    font-size: var(--font-size-base);
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
+
+  .link-card-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
