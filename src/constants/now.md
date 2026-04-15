@@ -1,4 +1,4 @@
-Aaaaah summer. Bugs all buzzing and
+Aaaaah summer feels today. Bugs all buzzing and
 
 All the darkness are fading and people who lived most of their lives in the tropics but emigrated to less sunny places become friendlier and nicer.
 
