@@ -1,4 +1,7 @@
 ---
+/**
+ * The code for /threads in production is in: https://git.ayo.run/ayo/threads
+ */
 import Layout from '../layouts/Layout.astro'
 import Footer from '../components/Footer.astro'
 
@@ -6,6 +9,10 @@ const page = {
   title: "Ayo's Threads",
   description: 'Incubator for thoughts before the become a blog',
 }
+
+console.warning(
+  'The code for /threads in production is in: https://git.ayo.run/ayo/threads'
+)
 ---
 
 <Layout title={page.title} description={page.description}>
@@ -33,7 +40,8 @@ const page = {
     </p>
     <p>
       Anyway, for questions don't hesitate to <a
-        href="https://ayo.ayco.io/about#contact">contact me</a>
+        href="https://ayo.ayco.io/about#contact">contact me</a
+      >
     </p>
   </main>
   <Footer />
