@@ -51,4 +51,4 @@ I push this project to three different code forges, because I'm paranoid like th
 ---
 
 _Just keep building._<br />
-_~Ayo_The power of git lies within its decentralized nature. 
+_~Ayo_
