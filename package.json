@@ -11,8 +11,9 @@
     "preview": "astro preview",
     "lint": "eslint . --config eslint.config.mjs --cache",
     "lint:fix": "eslint . --config eslint.config.mjs --fix",
-    "format": "prettier . --write",
-    "check": "npm run format && npm run lint",
+    "fmt": "prettier . --config prettier.config.mjs --check",
+    "fmt:fix": "prettier . --config prettier.config.mjs --write",
+    "check": "npm run fmt && npm run lint",
     "deploy": "eval $(grep '^HOST' .env) && scp -r dist ayo@$HOST:~/ayco.io-flask",
     "patch:build:deploy": "npm version patch && npm run build && npm run deploy",
     "pbd": "npm run patch:build:deploy",
@@ -61,11 +62,11 @@
   },
   "lint-staged": {
     "*.{js,mjs,astro,ts}": [
-      "prettier --write",
-      "eslint --fix"
+      "prettier . --config prettier.config.mjs --write",
+      "eslint . --config eslint.config.mjs --fix"
     ],
     "*.json": [
-      "prettier --write"
+      "prettier . --config prettier.config.mjs --write"
     ]
   },
   "packageManager": "pnpm@11.2.2",
