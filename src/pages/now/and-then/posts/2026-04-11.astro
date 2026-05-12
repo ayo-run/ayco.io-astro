@@ -1,0 +1,78 @@
+---
+import Layout from '../../../../layouts/Layout.astro'
+import Footer from '../../../../components/Footer.astro'
+
+const title = `Joining the Elk team, speaking my mind`
+const description = ``
+let publishedOn = `a sunny 11th day of April`
+const publishDate = `2026-04-11`
+const publishState = `in my home in Amsterdam`
+const content = `<p>Aaaaah summer feels today. Bugs all buzzing and</p>
+<p>All the darkness are fading and people who lived most of their lives in the tropics but emigrated to less sunny places become friendlier and nicer.</p>
+<p>BUT NOT ME! 😡</p>
+<p>kidding. 😅</p>
+<p>Anyway... I have <a href="https://github.com/elk-zone/elk/pull/3594">joined the team</a> behind <a href="https://elk.zone">Elk</a> where I continue to be the bottle of sunshine that I am.</p>
+<p>Kidding again.</p>
+<p>...where I try to be more annoying than usual and tag @everyone in our Discord server. That's it. That's me now.</p>
+<p>Also I have been smothering my <a href="https://ayo.ayco.io/threads">threads</a> page with my deepest darkest thoughts -- and people either like it or not. That's how it is really. It's probably gonna be written on my grave: "HIS THOUGHTS SUCK"</p>
+<p>...though honestly I have been getting more responses of validation and new connections that I have a feeling maybe I have been touching on something.... true???</p>
+<p>Only time will tell. As my therapist said: these thoughts will not matter in 5 years.</p>
+<p>...because they will be deleted.</p>
+<p>Kidding!</p>`
+
+publishedOn = publishedOn === '' ? publishDate : publishedOn
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <h1><span class="text-gradient">{title}</span></h1>
+    <p>
+      <small>
+        Published on
+        <time datetime={publishDate}>
+          {publishedOn}
+        </time>
+        {publishState}
+      </small>
+    </p>
+
+    <Fragment set:html={content} />
+
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .text-gradient {
+    font-weight: 900;
+    background-image: var(--ayo-gradient);
+    animation: pulse 4s ease-in-out infinite;
+    background-size: 500% 500%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position-y: 100%;
+    border-radius: 0.4rem;
+  }
+
+  .highlighted-content {
+    margin: 1rem 0;
+    background: #4f39fa;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    color: var(--color-bg);
+  }
+
+  .highlighted-content code {
+    font-size: var(--font-size-base);
+    border: 0.1em solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.25em;
+  }
+
+  .link-card-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
