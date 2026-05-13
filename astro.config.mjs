@@ -14,21 +14,6 @@ export default defineConfig({
     domains: ['cdn.bsky.app', 'media.ayco.io'],
     remotePatterns: [{ protocol: 'https' }],
   },
-  // security: {
-  //   csp: {
-  //     directives: ["default-src: 'self'"],
-  //     // insert additional directives
-  //     // directives: ["default-src: 'self'"],
-  //     scriptDirective: {
-  //       resources: [
-  //         'self',
-  //         'https://static.cloudflareinsights.com/beacon.min.js',
-  //       ],
-  //       // Toggle the keyword `strict-dynamic`
-  //       // strictDynamic: true,
-  //     },
-  //   },
-  // },
   integrations: [
     sitemap(),
     serviceWorker({
