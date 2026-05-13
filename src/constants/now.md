@@ -2,7 +2,7 @@ I bought a pull-up bar, and in addition to a few barbells at home, I am starting
 
 Super happy that I am getting healthier as I build my workout routines.
 
-To keep my mind healthy, I find it helpful to have several hobby things I can get back to from time to time.
+To keep my mind sharp, I find it helpful to have several hobby things I can get back to from time to time.
 
 I am in a few discussions for exploring some things in the open social web. Details can come later as they become more concrete.
 
