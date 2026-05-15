@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro'
 import now from '../constants/now.json'
 
 import { Picture } from 'astro:assets'
+import ChatLink from '../components/ChatLink.astro'
 
 // fetch mastodon account
 const response = await fetch(
@@ -37,10 +38,13 @@ const avatarSize = 150
           Hi, I'm <span class="heavy-text">Ayo</span>!
         </h1>
         <!--a href="https://forms.ayo.run/form/tnz7FybY" class="now-wrapper"-->
-        <a href="/now" class="now-wrapper">
+
+        <a href="/now" class="now-wrapper pill">
           <span class="now-label">now</span>
           <span class="status">{now.title}</span>
         </a>
+
+        <ChatLink class="pill" />
       </div>
     </div>
   </section>
@@ -84,6 +88,10 @@ const avatarSize = 150
   h1 span.heavy-text {
     font-weight: 900;
     color: white;
+  }
+
+  .pill {
+    margin-right: 0.5rem;
   }
 
   .now-wrapper {
