@@ -65,7 +65,8 @@ const baseURL = Astro.site?.toString().slice(0, -1) // ?? 'https://ayo.ayco.io'
     }
   </script>
   <script type="module">
+    // importing is enough to register the elements
+    // eslint-disable-next-line
     import StatusIndicator from 'status-indicator'
-    customElements.define('status-indicator', StatusIndicator)
   </script>
 </head>
