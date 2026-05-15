@@ -56,5 +56,16 @@ const baseURL = Astro.site?.toString().slice(0, -1) // ?? 'https://ayo.ayco.io'
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
   <!-- Web Components -->
-  <script type="module" src="https://esm.sh/@ayo-run/status-indicator"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "web-component-base": "/wc/node_modules/web-component-base/dist/index.js",
+        "status-indicator": "/wc/node_modules/@ayo-run/status-indicator/dist/status-indicator.js"
+      }
+    }
+  </script>
+  <script type="module">
+    import StatusIndicator from 'status-indicator'
+    customElements.define('status-indicator', StatusIndicator)
+  </script>
 </head>

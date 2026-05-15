@@ -5,7 +5,6 @@ import Footer from '../components/Footer.astro'
 import now from '../constants/now.json'
 
 import { Picture } from 'astro:assets'
-import ChatLink from '../components/ChatLink.astro'
 
 // fetch mastodon account
 const response = await fetch(
@@ -44,7 +43,14 @@ const avatarSize = 150
           <span class="status">{now.title}</span>
         </a>
 
-        <ChatLink class="pill" />
+        <a
+          href="https://chat.ayo.run/join/7IKG-h3nW-pD1H"
+          class="chat-link pill"
+        >
+          <status-indicator id="chat-link" pulse status="positive">
+            Chat
+          </status-indicator>
+        </a>
       </div>
     </div>
   </section>
@@ -92,16 +98,11 @@ const avatarSize = 150
 
   .pill {
     margin-right: 0.5rem;
-  }
-
-  .now-wrapper {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 40px;
-    padding: 8px 4px;
-    font-weight: normal;
+    padding: var(--pill-padding);
     color: white;
     font-size: var(--font-size-sm);
     text-decoration: none;
+    font-weight: normal;
   }
 
   .now-label {
@@ -201,7 +202,7 @@ const avatarSize = 150
   }
 
   @media only screen and (max-device-width: 360px) {
-    .now-wrapper {
+    .pill {
       border: 0px;
       border-radius: 0;
       font-size: var(--font-size-sm);

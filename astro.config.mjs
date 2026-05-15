@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config'
 import serviceWorker from '@ayco/astro-sw'
 import sitemap from '@astrojs/sitemap'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 import * as data from './package.json'
 
@@ -21,6 +22,10 @@ export default defineConfig({
       assetCachePrefix: 'ayco-personal-site',
       assetCacheVersionID: data.version,
       logAssets: true,
+      include: [
+        '/wc/node_modules/web-component-base/dist/index.js',
+        '/wc/node_modules/@ayo-run/status-indicator/dist/status-indicator.js',
+      ],
       esbuild: {
         minify: true,
       },
@@ -38,4 +43,20 @@ export default defineConfig({
       },
     }),
   ],
+  vite: {
+    plugins: [
+      viteStaticCopy({
+        targets: [
+          {
+            src: './node_modules/web-component-base/dist/index.js',
+            dest: 'wc',
+          },
+          {
+            src: './node_modules/@ayo-run/status-indicator/dist/status-indicator.js',
+            dest: 'wc',
+          },
+        ],
+      }),
+    ],
+  },
 })
