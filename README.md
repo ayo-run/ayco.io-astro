@@ -28,6 +28,7 @@ $ pnpm i
 | `pnpm run build`    | generate static files to `dist` directory      |
 | `pnpm run deploy`   | upload to my server                            |
 | `pnpm run prep:now` | back up and clear current `now page` constants |
+| `pnpm run patch:build:deploy` | increment version, build, then upload |
 
 ## Deployment
 
