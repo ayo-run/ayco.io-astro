@@ -1,4 +1,4 @@
 allowBuilds:
-  esbuild: set this to true or false
-  sharp: set this to true or false
-  web-component-base: set this to true or false
+  esbuild: false
+  sharp: false
+  web-component-base: false
