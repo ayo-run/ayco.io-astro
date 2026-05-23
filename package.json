@@ -19,7 +19,8 @@
     "build:deploy": "npm run build && npm run deploy",
     "copy:dist": "npm run build && cp -R dist ../ayco.io-flask/",
     "prepare": "husky",
-    "prep:now": "npx jiti ./commands/prep-now.js"
+    "prep:now": "npx jiti ./commands/prep-now.js",
+    "test": "vitest run ."
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.2",
@@ -52,7 +53,8 @@
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.59.3",
     "unified": "^11.0.5",
-    "vite-plugin-static-copy": "^4.1.0"
+    "vite-plugin-static-copy": "^4.1.0",
+    "vitest": "^4.1.7"
   },
   "lint-staged": {
     "*.{js,mjs,astro,ts}": [
