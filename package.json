@@ -63,7 +63,7 @@
       "prettier --write"
     ]
   },
-  "packageManager": "pnpm@10.33.2",
+  "packageManager": "pnpm@11.2.2",
   "dependencies": {
     "@ayo-run/status-indicator": "^2.1.2",
     "web-component-base": "^4.1.2"
