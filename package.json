@@ -54,7 +54,8 @@
     "typescript-eslint": "^8.59.3",
     "unified": "^11.0.5",
     "vite-plugin-static-copy": "^4.1.0",
-    "vitest": "^4.1.7"
+    "vitest": "^4.1.7",
+    "vitest-dom": "^0.1.1"
   },
   "lint-staged": {
     "*.{js,mjs,astro,ts}": [
