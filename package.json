@@ -26,6 +26,7 @@
     "@astrojs/sitemap": "^3.7.2",
     "@ayco/astro-sw": "^1.0.0",
     "@eslint/compat": "^2.1.0",
+    "@eslint/config-helpers": "^0.6.0",
     "@eslint/js": "^10.0.1",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/simple-icons": "^1.2.82",

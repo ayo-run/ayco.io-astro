@@ -5,7 +5,7 @@ import tseslint from 'typescript-eslint'
 import astroSwGlobals from '@ayco/astro-sw/globals'
 import astroParser from 'astro-eslint-parser'
 
-import { includeIgnoreFile } from '@eslint/compat'
+import { includeIgnoreFile } from '@eslint/config-helpers'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
