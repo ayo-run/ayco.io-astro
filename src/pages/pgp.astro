@@ -1,11 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Footer from '../components/Footer.astro'
+
+const title = 'PGP public key'
+const description =
+  'Use this to verify digitally signed content like emails and files'
 ---
 
-<Layout title="About" description="About Ayo Ayco and how to contact">
+<Layout title="Ayo's {title}" description={description}>
   <main>
-    <h1>My PGP Public Key</h1>
+    <h1>My {title}</h1>
+    <p>{description}</p>
 
     <div class="key-block" role="region" aria-labelledby="public-key">
       <button class="copy-btn" aria-label="Copy key to clipboard">Copy</button>
