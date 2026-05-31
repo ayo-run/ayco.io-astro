@@ -13,7 +13,12 @@ const description =
     <p>{description}</p>
 
     <div class="key-block" role="region" aria-labelledby="public-key">
-      <button class="copy-btn" aria-label="Copy key to clipboard">Copy</button>
+      <div class="btn-wrapper">
+        <button class="copy-btn btn" aria-label="Copy key to clipboard"
+          >Copy</button
+        >
+        <a href="/publickey.asc" class="btn">Download</a>
+      </div>
       <pre
         id="public-key"><code>
 -----BEGIN PGP PUBLIC KEY BLOCK-----
@@ -31,11 +36,13 @@ AP0YLC768PFTBm9CM5T1BE0xjJ7s4dZSrVoI4n8RSe1nCA==
 -----END PGP PUBLIC KEY BLOCK-----
           </code></pre>
     </div>
-
+    <p>Expiry Date: 2027-05-30</p>
     <p>
-      <a href="/publickey.asc" class="download-link"> Download key (asc) </a>
+      Fingerprint: <code
+        >17F1 3D5E 8FF7 372B 1354 5C38 65E6 BF64 1529 3C65</code>
     </p>
-    <p>This key will expire on: 2027-05-30</p>
+
+    <p></p>
   </main>
   <Footer />
 </Layout>
@@ -83,11 +90,16 @@ AP0YLC768PFTBm9CM5T1BE0xjJ7s4dZSrVoI4n8RSe1nCA==
     display: block;
   }
 
-  /* Copy button */
-  .copy-btn {
+  /* buttons */
+  .btn-wrapper {
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
+  }
+
+  .btn {
+    display: inline-block;
+    position: relative;
     background: var(--color-brand-blue-1);
     color: #fff;
     border: none;
@@ -97,14 +109,15 @@ AP0YLC768PFTBm9CM5T1BE0xjJ7s4dZSrVoI4n8RSe1nCA==
     cursor: pointer;
     opacity: 0.9;
     transition: opacity 0.2s;
+    text-decoration: none;
   }
 
-  .copy-btn:hover,
-  .copy-btn:focus {
+  .btn:hover,
+  .btn:focus {
     opacity: 1;
   }
 
-  .copy-btn:focus {
+  .btn:focus {
     outline: 2px solid #0056b3;
     outline-offset: 2px;
   }
