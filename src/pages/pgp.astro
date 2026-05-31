@@ -5,8 +5,12 @@ import Footer from '../components/Footer.astro'
 
 <Layout title="About" description="About Ayo Ayco and how to contact">
   <main>
-    <code
-      ><pre>
+    <h1>My PGP Public Key</h1>
+
+    <div class="key-block" role="region" aria-labelledby="public-key">
+      <button class="copy-btn" aria-label="Copy key to clipboard">Copy</button>
+      <pre
+        id="public-key"><code>
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 mDMEahs0NhYJKwYBBAHaRw8BAQdAV2CfblniKxklPgW9eYt2gBl0jMHLwtjrQaY+
@@ -20,17 +24,80 @@ AAoJEGXmv2QVKTxlMSQBAP5ta1kUFp3HAYwcun8qmoiVq1dEJSN1LnI7HlX4ucTl
 AP0YLC768PFTBm9CM5T1BE0xjJ7s4dZSrVoI4n8RSe1nCA==
 =MTsv
 -----END PGP PUBLIC KEY BLOCK-----
-    </pre></code
-    >
-    <p>
-      👉 <a href="/publickey.asc">Download</a>
-    </p>
+          </code></pre>
+    </div>
+
+    <a href="/publickey.asc" class="download-link"> Download key (asc) </a>
   </main>
   <Footer />
 </Layout>
 
+<script>
+  /* Clipboard copy logic */
+  document.querySelector('.copy-btn').addEventListener('click', async () => {
+    const keyText = document.querySelector('#public-key code').innerText.trim()
+    try {
+      await navigator.clipboard.writeText(keyText)
+      const btn = document.querySelector('.copy-btn')
+      const original = btn.textContent
+      btn.textContent = 'Copied!'
+      setTimeout(() => {
+        btn.textContent = original
+      }, 2000)
+    } catch (err) {
+      console.error('Copy failed', err)
+      alert('Unable to copy the key. Please copy it manually.')
+    }
+  })
+</script>
+
 <style>
   code {
     font-size: var(--font-size-sm);
+  }
+
+  .key-block {
+    position: relative;
+    background: #272822;
+    color: #f8f8f2;
+    font-family: monospace;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    padding: 1rem 1rem 1rem 1.5rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 1em 0;
+  }
+
+  .key-block code {
+    display: block;
+  }
+
+  /* Copy button */
+  .copy-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: var(--color-brand-blue-1);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+  }
+
+  .copy-btn:hover,
+  .copy-btn:focus {
+    opacity: 1;
+  }
+
+  .copy-btn:focus {
+    outline: 2px solid #0056b3;
+    outline-offset: 2px;
   }
 </style>
