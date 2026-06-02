@@ -22,13 +22,30 @@ $ pnpm i
 
 ## Commands
 
-| Command             | Action                                         |
-| ------------------- | ---------------------------------------------- |
-| `pnpm run dev`      | start dev server                               |
-| `pnpm run build`    | generate static files to `dist` directory      |
-| `pnpm run deploy`   | upload to my server                            |
-| `pnpm run prep:now` | back up and clear current `now page` constants |
-| `pnpm run patch:build:deploy` | increment version, build, then upload |
+| Command                       | Action                                         |
+| ----------------------------- | ---------------------------------------------- |
+| `pnpm run dev`                | start dev server                               |
+| `pnpm run build`              | generate static files to `dist` directory      |
+| `pnpm run deploy`             | upload to my server                            |
+| `pnpm run prep:now`           | back up and clear current `now page` constants |
+| `pnpm run patch:build:deploy` | increment version, build, then upload          |
+
+## Testing
+
+This project uses Vitest for unit tests. The test script is defined in `package.json` as `vitest run .`.
+
+Run tests locally with pnpm (recommended):
+
+```bash
+# install dependencies (if you haven't already)
+pnpm i
+
+# run tests once
+pnpm test
+
+# run Vitest in interactive/watch mode
+pnpm exec vitest
+```
 
 ## Deployment
 
