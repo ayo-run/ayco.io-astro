@@ -15,7 +15,7 @@ import { getImage } from 'astro:assets'
 
 // fetch mastodon account
 const response = await fetch(
-  'https://social.ayco.io/api/v1/accounts/lookup?acct=ayo'
+  'https://m.webtoo.ls/api/v1/accounts/lookup?acct=ayo'
 )
 const data = await response.json()
 const { avatar } = data
