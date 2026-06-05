@@ -11,8 +11,16 @@ const response = await fetch(
   'https://m.webtoo.ls/api/v1/accounts/lookup?acct=ayo'
 )
 const data = await response.json()
-const { avatar, note } = data
+const { avatar, note, emojis } = data
 const avatarSize = 150
+console.log(emojis)
+let description = note
+emojis.forEach((emoji) => {
+  description = description.replace(
+    `:${emoji.shortcode}:`,
+    `<img class="emoji" src="${emoji.static_url}" />`
+  )
+})
 ---
 
 <Layout>
@@ -22,7 +30,6 @@ const avatarSize = 150
         <!-- h-card details -->
         <span class="p-name">Ayo Ayco</span>
         <a class="u-url u-uid" href="https://ayo.ayco.io">w</a>,
-        <section class="p-note" set:html={note} />
       </div>
       <Picture
         class="u-photo highlighted-section__content__profile-picture"
@@ -36,6 +43,8 @@ const avatarSize = 150
         <h1 title="Ayo Ayco | Software Engineer + Web Developer">
           Hi, I'm <span class="heavy-text">Ayo</span>!
         </h1>
+
+        <section class="p-note" set:html={description} />
 
         <a href="/now" class="now-wrapper action primary">
           <span class="now-label">
@@ -134,12 +143,28 @@ const avatarSize = 150
   }
 
   .highlighted-section__content {
+    .p-note {
+      font-size: var(--font-size-sm)
+       a {
+        text-decoration: none;
+        color: var(--color-brand-complement);
+      }
+    }
+
+    .emoji {
+      border: 0;
+      display: inline;
+      height: calc(1rem + 6px);
+      margin-bottom: -4px;
+    }
+
     margin: auto;
     padding: 1rem;
     max-width: var(--content-width);
     font-weight: normal;
     font-size: var(--font-size-lg);
     color: var(--text-color-light);
+    line-height: 1em;
   }
 
   .highlighted-section__content__profile-picture {
