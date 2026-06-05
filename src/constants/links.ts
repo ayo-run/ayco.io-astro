@@ -57,7 +57,7 @@ export const footerLinks: Link[] = [
   },
   {
     text: 'Mastodon',
-    url: 'https://main.elk.zone/m.webtoo.ls/@ayo',
+    url: 'https://elk.zone/m.webtoo.ls/@ayo',
     icon: 'mastodon',
   },
   {
