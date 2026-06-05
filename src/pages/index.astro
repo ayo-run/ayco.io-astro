@@ -38,7 +38,9 @@ const avatarSize = 150
         </h1>
 
         <a href="/now" class="now-wrapper action primary">
-          <span class="now-label">now</span>
+          <span class="now-label">
+            <status-indicator status="active" pulse> now </status-indicator>
+          </span>
           <span class="status">{now.title}</span>
         </a>
       </div>
@@ -93,6 +95,7 @@ const avatarSize = 150
 
     &.primary {
       border: 1px solid rgba(255, 255, 255, 0.2);
+      border-style: dotted;
       border-radius: 40px;
     }
   }
