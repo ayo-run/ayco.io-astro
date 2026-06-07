@@ -26,4 +26,7 @@
   --bg-dark: #343a40;
   --bg-darker: #212529;
   --bg-darkest: #000;
+
+  --dot-grid-light: 214 32% 82%;
+  --dot-grid-dark: 215 25% 20%;
 }
